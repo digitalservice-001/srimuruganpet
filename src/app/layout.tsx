@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Sri murugan Pet Industries",
   description: "Sri Murugan Pet Industries is a leading manufacturer of high-quality pet products, specializing in pet food, accessories, and care items. Our commitment to quality and innovation ensures that pets receive the best care possible.",
   // openGraph: {  }
-};
+};  
 
 export default function RootLayout({
   children,
