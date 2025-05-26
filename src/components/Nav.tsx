@@ -227,7 +227,7 @@ export default function Nav() {
       <div ref={navRef} className="sticky top-0 z-50 bg-gray-800 text-white shadow-md">
         <div className="container mx-auto flex h-16 md:h-20 justify-between items-center px-4">
           <div className="font-bold text-base sm:text-lg md:text-xl truncate max-w-[200px] sm:max-w-none">
-            SRI MURUGAN PET INDUSTRIES
+            SRI MURUGAN PET 
           </div>
           <button className="md:hidden z-50 p-2" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
             {isOpen ? (

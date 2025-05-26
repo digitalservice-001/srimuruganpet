@@ -24,47 +24,6 @@ export default function ContactPage() {
     message?: string
   } | null>(null)
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   setIsSubmitting(true)
-  //   setSubmitStatus(null)
-
-  //   try {
-  //     // This would be replaced with actual API call using Resend
-  //     const response = await fetch('/api/send-email', {
-  //       method: 'POST',
-  //       body: JSON.stringify(formData),
-  //       headers: { 'Content-Type': 'application/json' },
-  //     });
-
-  //     // Simulating API call
-  //     await new Promise((resolve) => setTimeout(resolve, 1000))
-
-  //     if (!response.ok) throw new Error('Failed to send email');
-  //     const data = await response.json();
-  //     console.log(data);
-  //     setSubmitStatus({
-  //       success: true,
-  //       message: "Your message has been sent successfully!",
-  //     })
-
-  //     // Reset form
-  //     setFormData({
-  //       name: "",
-  //       email: "",
-  //       subject: "",
-  //       message: "",
-  //     })
-  //   } catch (error) {
-  //     console.error("Error sending email:", error)
-  //     setSubmitStatus({
-  //       success: false,
-  //       message: "Failed to send your message. Please try again later.",
-  //     })
-  //   } finally {
-  //     setIsSubmitting(false)
-  //   }
-  // }
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
     setSubmitStatus(null)
     console.log("Form data:", data)
@@ -76,14 +35,6 @@ export default function ContactPage() {
       })
 
       if (!response.ok) throw new Error("Failed to send email")
-      // const result = await response.json()
-
-      // Open WhatsApp with pre-filled message after successful form submission
-      // const whatsappMessage = encodeURIComponent(
-      //   `Name: ${data.name}\nEmail: ${data.email}\nMobile: ${data.mobile}\nSubject: ${data.subject}\nMessage: ${data.message}`,
-      // )
-      // const whatsappNumber = "+916385218179" // Replace with your actual WhatsApp number with country code
-      // window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank")
 
       setSubmitStatus({
         success: true,
@@ -148,16 +99,7 @@ export default function ContactPage() {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h2 className="text-2xl font-semibold mb-6">Location</h2>
                 <div className="aspect-video w-full h-[300px] bg-gray-200 rounded-lg overflow-hidden">
-                  {/* <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125323.4713156691!2d76.89001362341609!3d11.011701484836407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716066000000!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Coimbatore Map"
-                  ></iframe> */}
+
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8805519312353!2d76.99737171525854!3d11.125498290929444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f70065ed5471%3A0x2656cd389b9f4484!2sSri%20Murugan%20PET%20Industries!5e0!3m2!1sen!2sin!4v1685052101234!5m2!1sen!2sin"
                     width="100%"
@@ -189,91 +131,7 @@ export default function ContactPage() {
               )} */}
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                {/* <div>
-                  <label htmlFor="name" className="block text-medium font-medium text-gray-700 mb-1">
-                    Your Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    placeholder="Please enter your name"
-                    type="text"
-                    {...register("name", {
-                      required: "Name is required",
-                      minLength: { value: 2, message: "Name must be at least 2 characters long" },
-                      maxLength: { value: 50, message: "Name must be less than 50 characters long" },
-                    })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  />
-                </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-medium font-medium text-gray-700 mb-1">
-                    Your Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="Please enter your email"
-                    {...register("email", {
-                      required: "Email is required",
-                      pattern: {
-                        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                        message: "Invalid email address",
-                      },
-                    })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-medium font-medium text-gray-700 mb-1">
-                    Subject <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    placeholder="Please enter your subject"
-                    type="text"
-                    id="subject"
-                    {...register("subject", { required: "Subject is required" })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="mobile" className="block text-medium font-medium text-gray-700 mb-1">
-                    Mobile Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    maxLength={10}
-                    placeholder="Please enter your mobile number"
-                    inputMode="numeric"
-                    {...register("mobile", {
-                      required: "Mobile number is required",
-                      pattern: {
-                        value: /^[0-9]{10}$/,
-                        message: "Mobile number must be exactly 10 digits",
-                      },
-                    })}
-                    onInput={(e) => {
-                      const input = e.target as HTMLInputElement;
-                      input.value = input.value.replace(/[^0-9]/g, "");
-                    }}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-medium font-medium text-gray-700 mb-1">
-                    Your Message <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    placeholder="Please enter your message"
-                    {...register("message", { required: "Message is required" })}
-                    rows={6}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  ></textarea>
-                </div> */}
                 <div>
                   <label htmlFor="name" className="block text-medium font-medium text-gray-700 mb-1">
                     Your Name <span className="text-red-500">*</span>
@@ -397,7 +255,10 @@ export default function ContactPage() {
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      {/* ...existing SVG paths... */}
+                      <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                      </svg>
                     </svg>
                     WhatsApp Us
                   </a>
