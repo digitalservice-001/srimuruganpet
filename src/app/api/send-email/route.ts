@@ -62,7 +62,7 @@ export async function POST(request: Request) {
       <h2 style="color: #0066cc; font-size: 24px; margin-bottom: 20px;">Thank You for Contacting Us</h2>
       <p style="font-size: 18px; margin: 12px 0;">Dear ${name},</p>
       <p style="font-size: 18px; margin: 12px 0;">Thanks for reaching out. We'll reply shortly.</p>
-      <p style="font-size: 18px; margin-top: 24px;">Best regards,<br>SRI MURUGAN PET INDUSTRIES</p>
+      <p style="font-size: 18px; margin-top: 24px;">Best regards,<br>SRI MURUGAN PET INDUSTRY</p>
     </div>
   `,
     };

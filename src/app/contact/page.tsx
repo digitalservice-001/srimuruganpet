@@ -109,7 +109,7 @@ export default function ContactPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Sri Murugan PET Industries Location"
+                    title="Sri Murugan Pet Industry Location"
                   ></iframe>
 
 

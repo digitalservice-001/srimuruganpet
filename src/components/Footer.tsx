@@ -215,7 +215,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} Sri murugan pet industries. All rights reserved.
+          <p>© {new Date().getFullYear()} Sri murugan pet industry. All rights reserved.
           </p>
         </div>
       </div>
