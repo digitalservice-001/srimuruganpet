@@ -58,7 +58,11 @@ export default function ResponsiveSlider() {
     if (isTablet) return 2
     return 3
   }
-
+  // const getSlidesPerView = () => {
+  //   if (isMobile) return 1.2
+  //   if (isTablet) return 2.2
+  //   return 3.2
+  // }
   return (
     <div className="w-full bg-gradient-to-b from-slate-50 to-white mb-16">
       <div className="container mx-auto px-4 py-4 sm:py-8">
@@ -79,6 +83,21 @@ export default function ResponsiveSlider() {
             }}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             centeredSlides
+            // centeredSlides={false} // Changed to false
+            breakpoints={{
+              320: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 2.2,
+                spaceBetween: 15,
+              },
+              1024: {
+                slidesPerView: 3.2,
+                spaceBetween: 20,
+              }
+            }}
             loop
             slidesPerView={getSlidesPerView()}
             spaceBetween={isMobile ? 10 : 20}
@@ -107,7 +126,7 @@ export default function ResponsiveSlider() {
                     src={img.url}
                     alt={img.alt}
                     fill
-                    className=" rounded-[3rem] shadow-xl hover:scale-105 transition-transform duration-300"
+                    className=" rounded-[3rem] shadow-xl transition-transform duration-300"
                     sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, 75vw"
                     priority={idx === activeIndex}
                     quality={100}
@@ -154,7 +173,7 @@ export default function ResponsiveSlider() {
         </div>
 
         {/* About Us Section */}
-        <div className="mt-12 md:mt-20 text-center max-w-4xl mx-auto px-4">
+        <div className=" text-center max-w-4xl mx-auto px-4">
           <div className="inline-block mb-6">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 relative">
               About Us
@@ -162,7 +181,7 @@ export default function ResponsiveSlider() {
             </h2>
           </div>
 
-          <div className="mt-8 space-y-4 md:space-y-6 text-slate-700">
+          <div className="mt-8 space-y-4 md:space-y-6 text-slate-700 font-serif">
             <p className="text-sm sm:text-base md:text-lg leading-relaxed">
               In a world demanding strength, lightness, and sustainability, PET stands out — and so do we. Established
               in 2021, our company was built on a mission to harness the true potential of Polyethylene Terephthalate

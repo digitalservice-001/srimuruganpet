@@ -96,11 +96,16 @@
 //   )
 // }
 
+'use client'
 
+import { usePathname } from 'next/navigation'
 import Link from "next/link"
 import { Mail, Phone, MapPin } from "lucide-react"
+// import { useLocation } from 
 
 export default function Footer() {
+  const path = usePathname()
+  // console.log("Footer rendered",usePathname())
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -130,20 +135,23 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-                  Home
-                </Link>
+                {path !== "/" && (
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                    Home
+                  </Link>
+
+                )}
               </li>
               <li>
                 <Link href="/product" className="text-gray-300 hover:text-white transition-colors">
-                  Products
+                  Product Catalog
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
                   About
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
@@ -207,8 +215,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-400">
-          <p>© {new Date().getFullYear()}. All rights reserved.
-</p>
+          <p>© {new Date().getFullYear()} Sri murugan pet industries. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

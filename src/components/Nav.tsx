@@ -249,7 +249,7 @@ export default function Nav() {
               Product Catalog
             </Link>
             <Link href="/contact" className={linkStyles("/contact")}>
-              Contact us
+              Contact Us
             </Link>
           </nav>
         </div>
@@ -269,7 +269,7 @@ export default function Nav() {
                   Product Catalog
                 </Link>
                 <Link href="/contact" className={mobileLinkStyles("/contact")} onClick={() => setIsOpen(false)}>
-                  Contact US
+                  Contact Us
                 </Link>
 
                 {/* <div className="pt-6 mt-6 border-t border-gray-700 w-full flex flex-col items-center">
