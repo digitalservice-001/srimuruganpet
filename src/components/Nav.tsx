@@ -49,8 +49,8 @@ export default function Nav() {
   const mobileLinkStyles = (path: string) => {
     const isActive = pathname === path
     return `transition-all duration-200 text-lg py-3 ${isActive
-        ? "text-white font-semibold bg-gray-700 px-4 py-3 rounded-md w-full text-center"
-        : "text-gray-300 hover:text-white hover:bg-gray-700/50 px-4 py-3 rounded-md w-full text-center"
+      ? "text-white font-semibold bg-gray-700 px-4 py-3 rounded-md w-full text-center"
+      : "text-gray-300 hover:text-white hover:bg-gray-700/50 px-4 py-3 rounded-md w-full text-center"
       }`
   }
 
@@ -59,7 +59,7 @@ export default function Nav() {
       <div ref={navRef} className="sticky top-0 z-50 bg-gray-800 text-white shadow-md">
         <div className="container mx-auto flex h-16 md:h-20 justify-between items-center px-4">
           <div className="font-bold text-base sm:text-lg md:text-xl truncate max-w-[200px] sm:max-w-none">
-            SRI MURUGAN PET 
+            SRI MURUGAN PET
           </div>
           <button className="md:hidden z-50 p-2" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
             {isOpen ? (
@@ -78,7 +78,7 @@ export default function Nav() {
               Home
             </Link>
             <Link href="/product" className={linkStyles("/product")}>
-            Product Catalogue
+              Product Catalogue
             </Link>
             <Link href="/contact" className={linkStyles("/contact")}>
               Contact Us
@@ -98,7 +98,7 @@ export default function Nav() {
                   Home
                 </Link>
                 <Link href="/product" className={mobileLinkStyles("/product")} onClick={() => setIsOpen(false)}>
-              Product Catalogue
+                  Product Catalogue
                 </Link>
                 <Link href="/contact" className={mobileLinkStyles("/contact")} onClick={() => setIsOpen(false)}>
                   Contact Us

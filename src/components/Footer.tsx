@@ -144,7 +144,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/product" className="text-gray-300 hover:text-white transition-colors">
-                  Product Catalog
+                 Product Catalogue
                 </Link>
               </li>
               {/* <li>
