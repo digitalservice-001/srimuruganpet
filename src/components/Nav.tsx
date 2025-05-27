@@ -78,7 +78,7 @@ export default function Nav() {
               Home
             </Link>
             <Link href="/product" className={linkStyles("/product")}>
-              Product Catalog
+            Product Catalogue
             </Link>
             <Link href="/contact" className={linkStyles("/contact")}>
               Contact Us
@@ -98,7 +98,7 @@ export default function Nav() {
                   Home
                 </Link>
                 <Link href="/product" className={mobileLinkStyles("/product")} onClick={() => setIsOpen(false)}>
-                  Product Catalog
+              Product Catalogue
                 </Link>
                 <Link href="/contact" className={mobileLinkStyles("/contact")} onClick={() => setIsOpen(false)}>
                   Contact Us
