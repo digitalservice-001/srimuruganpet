@@ -206,17 +206,17 @@ export default function ResponsiveSlider() {
           </div>
         </div> */}
         {/* About Us Section */}
-        <div className="mt-12 md:mt-20 text-center max-w-7xl mx-auto px-4">
+        <div className=" text-center max-w-7xl mx-auto px-4">
           <div className="inline-block mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 relative">
               About Us
               <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-slate-800 rounded-full"></span>
             </h2>
           </div>
-
           <div className="flex flex-col-reverse md:flex-row items-start justify-between gap-8 md:gap-12 lg:gap-16">
+
             {/* Text Content */}
-            <div className="w-full md:w-2/3 space-y-4 md:space-y-6 text-slate-700 text-left font-serif">
+            <div className="w-full md:w-2/3  space-y-4 md:space-y-6 text-slate-700 text-left font-serif">
               <p className="text-base sm:text-lg leading-relaxed">
                 In a world demanding strength, lightness, and sustainability, PET stands out — and so do we. Established
                 in 2021, our company was built on a mission to harness the true potential of Polyethylene Terephthalate
@@ -227,36 +227,81 @@ export default function ResponsiveSlider() {
                 packages, and innovates. At the heart of our operations is a commitment to quality, durability, and
                 environmental responsibility.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed">
+              {/* <p className="text-base sm:text-lg leading-relaxed w-full">
                 We take pride in delivering PET products that not only meet performance standards but also support
                 circular economy goals. As one of the most widely recycled plastics, PET plays a critical role in
                 sustainable waste management, and we&#39;re proud to be part of that change.
-              </p>
+              </p> */}
             </div>
 
             {/* Image Container */}
-            {/* Image Container */}
-            <div className="w-full md:w-2/3 mb-8 md:mb-0"> {/* Slightly reduced width */}
-
+            <div className="w-full md:w-2/3">
               <Image
                 src="/company.jpg"
                 alt="Company Image"
-                width={1000} // Adjusted to better match desired dimensions
-                height={1600} // Increased height
-                className="object-cover w-full h-auto rounded-2xl" // Responsive width with natural height
+                width={1000}
+                height={1600}
+                className="object-cover w-full h-auto rounded-2xl"
                 priority
               />
-
             </div>
 
 
 
+          </div>
+          <div className="w-full mt-4  space-y-4 md:space-y-6 text-slate-700 text-left font-serif">
 
-
-
+            <p className="text-base sm:text-lg leading-relaxed w-full">
+              We take pride in delivering PET products that not only meet performance standards but also support
+              circular economy goals. As one of the most widely recycled plastics, PET plays a critical role in
+              sustainable waste management, and we&#39;re proud to be part of that change.
+            </p>
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+
+// {/* <div className="flex flex-col-reverse md:flex-row items-start justify-between gap-8 md:gap-12 lg:gap-16">
+//             {/* Text Content */}
+//             <div className="w-full md:w-2/3 space-y-4 md:space-y-6 text-slate-700 text-left font-serif">
+//               <p className="text-base sm:text-lg leading-relaxed">
+//                 In a world demanding strength, lightness, and sustainability, PET stands out — and so do we. Established
+//                 in 2021, our company was built on a mission to harness the true potential of Polyethylene Terephthalate
+//                 (PET) — a high-performance thermoplastic polymer known for its versatility across industries.
+//               </p>
+//               <p className="text-base sm:text-lg leading-relaxed">
+//                 From food and beverages to many other applications, PET continues to shape the way the world manufactures,
+//                 packages, and innovates. At the heart of our operations is a commitment to quality, durability, and
+//                 environmental responsibility.
+//               </p>
+//               <p className="text-base sm:text-lg leading-relaxed">
+//                 We take pride in delivering PET products that not only meet performance standards but also support
+//                 circular economy goals. As one of the most widely recycled plastics, PET plays a critical role in
+//                 sustainable waste management, and we&#39;re proud to be part of that change.
+//               </p>
+//             </div>
+
+//             {/* Image Container */}
+//             {/* Image Container */}
+//             <div className="w-full md:w-2/3 mb-8 md:mb-0"> {/* Slightly reduced width */}
+
+//               <Image
+//                 src="/company.jpg"
+//                 alt="Company Image"
+//                 width={1000} // Adjusted to better match desired dimensions
+//                 height={1600} // Increased height
+//                 className="object-cover w-full h-auto rounded-2xl" // Responsive width with natural height
+//                 priority
+//               />
+
+//             </div>
+
+
+
+
+
+
+//           </div> */}
