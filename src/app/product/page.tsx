@@ -60,16 +60,16 @@ export default function ProductsPage() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full group"
+                className="bg-slate-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full group"
                 onClick={() => showProductModal(product)}
               >
                 {/* Image Container with hover effect */}
-                <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96">
+                <div className="relative rounded-2xl w-full h-64 sm:h-72 md:h-80 lg:h-96">
                   <Image
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
                     fill
-                    className="object-contain p-4 cursor-pointer group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain rounded-4xl p-4 cursor-pointer group-hover:scale-105 transition-transform duration-500"
                     sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                     priority={product.id <= 4}
                   />
