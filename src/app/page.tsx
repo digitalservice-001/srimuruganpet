@@ -14,23 +14,23 @@ import "swiper/css/navigation"
 
 const images = [
   {
-    url: "/grp1.JPEG",
+    url: "/Sri Murugan Batch images.png",
     alt: "Product Image 1",
   },
   {
-    url: "/grp2.JPEG",
+    url: "/Sri Murugan Batch images 1.png",
     alt: "Product Image 2",
   },
   {
-    url: "/grp3.JPEG",
+    url: "/Sri Murugan Batch images 2.png",
     alt: "Product Image 3",
   },
   {
-    url: "/grp4.JPEG",
+    url: "/Sri Murugan Batch images 3.png",
     alt: "Product Image 4",
   },
   {
-    url: "/grp5.JPEG",
+    url: "/Sri Murugan Batch images 4.png",
     alt: "Product Image 5",
   },
 ]
