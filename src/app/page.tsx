@@ -55,7 +55,7 @@ export default function ResponsiveSlider() {
   }
 
   const getSlidesPerView = () => {
-    if (window.innerWidth <= 498) return 1
+    // if (window.innerWidth <= 498) return 1
     if (isMobile) return 1
     if (isTablet) return 2
     return 3
