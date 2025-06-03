@@ -109,7 +109,7 @@ export default function ResponsiveSlider() {
                 className="flex justify-center items-center transition-all duration-500 py-4 sm:py-6"
               >
                 <motion.div
-                  className="relative sm:w-[75%] w-[60%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-3xl"
+                  className="flex sm:w-[75%] md:w-[80%] w-[60%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-3xl"
                   animate={{
                     scale: idx === activeIndex ? 1.05 : 0.9,
                     opacity: idx === activeIndex ? 1 : 0.6,

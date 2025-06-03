@@ -40,3 +40,9 @@ body {
 .swiper-pagination-bullet-active {
   opacity: 1 !important;
 }
+
+@media screen and (max-height: 420px) and (orientation: landscape) {
+  .swiper-slide div {
+    height: 200px !important;
+  }
+}
