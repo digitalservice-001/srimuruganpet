@@ -109,7 +109,7 @@ export default function ResponsiveSlider() {
                 className="flex rounded-[3rem] justify-center items-center transition-all duration-500 py-4 sm:py-6"
               >
                 <motion.div
-                  className="relative w-[90%] sm:w-[85%] md:w-[75%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-[3rem]"
+                  className="relative w-[90%] sm:w-[85%] md:w-[75%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-2xl "
                   animate={{
                     scale: idx === activeIndex ? 1.05 : 0.9,
                     opacity: idx === activeIndex ? 1 : 0.6,
@@ -126,14 +126,46 @@ export default function ResponsiveSlider() {
                     src={img.url}
                     alt={img.alt}
                     fill
-                    className=" rounded-[3rem] shadow-xl transition-transform duration-300"
-                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, 75vw"
+                    // className=" rounded-[3rem] shadow-xl transition-transform duration-300"
+                    // sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, 75vw"
                     priority={idx === activeIndex}
                     quality={100}
                   />
                 </motion.div>
               </SwiperSlide>
             ))}
+
+            {/* {images.map((img, idx) => (
+              <SwiperSlide
+                key={idx}
+                className="flex justify-center items-center transition-all duration-500 py-4 sm:py-6"
+              >
+                <motion.div
+                  className="relative w-[90%] sm:w-[85%] md:w-[75%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-[2.5rem] shadow-xl"
+                  animate={{
+                    scale: idx === activeIndex ? 1.05 : 0.9,
+                    opacity: idx === activeIndex ? 1 : 0.6,
+                    y: idx === activeIndex ? -10 : 0,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20,
+                  }}
+                >
+                  <Image
+                    src={img.url}
+                    alt={img.alt}
+                    fill
+                    className="object-contain rounded-[2.5rem]"
+                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, 75vw"
+                    priority={idx === activeIndex}
+                    quality={100}
+                  />
+                </motion.div>
+              </SwiperSlide>
+            ))} */}
 
             {/* Navigation Buttons */}
             <button
