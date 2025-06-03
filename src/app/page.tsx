@@ -40,7 +40,6 @@ export default function ResponsiveSlider() {
   const swiperRef = useRef<SwiperType | null>(null)
   const isMobile = useMediaQuery("(max-width: 768px)")
   const isTablet = useMediaQuery("(max-width: 1024px)")
-  const isPortrait = useMediaQuery("(orientation: portrait)")
 
   const handlePrevClick = () => {
     if (swiperRef.current) {
@@ -55,7 +54,6 @@ export default function ResponsiveSlider() {
   }
 
   const getSlidesPerView = () => {
-    // if (window.innerWidth <= 498) return 1
     if (isMobile) return 1
     if (isTablet) return 2
     return 3
@@ -69,13 +67,7 @@ export default function ResponsiveSlider() {
     <div className="w-full bg-gradient-to-b from-slate-50 to-white mb-16">
       <div className="container mx-auto px-4 py-4 sm:py-8">
         {/* Slider Section */}
-        {/* <div className="w-full h-[350px]  xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] relative group overflow-hidden"> */}
-
-        {/* <div className={`w-full ${isPortrait ? 'h-[400px] sm:h-[450px]' : 'h-[280px] sm:h-[320px]'} md:h-[500px] lg:h-[550px] relative group overflow-hidden`}> */}
-        <div className={`w-full ${isPortrait
-          ? 'h-[350px] xs:h-[400px] sm:h-[450px]'
-          : 'h-[280px] sm:h-[320px]'
-          } md:h-[500px] lg:h-[550px] relative group overflow-hidden`}>
+        <div className="w-full h-[350px]  xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] relative group overflow-hidden">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper
@@ -92,27 +84,8 @@ export default function ResponsiveSlider() {
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             centeredSlides
             // centeredSlides={false} // Changed to false
-            // breakpoints={{
-            //   320: {
-            //     slidesPerView: 1.2,
-            //     spaceBetween: 10,
-            //   },
-            //   640: {
-            //     slidesPerView: 2.2,
-            //     spaceBetween: 15,
-            //   },
-            //   1024: {
-            //     slidesPerView: 3.2,
-            //     spaceBetween: 20,
-            //   }
-            // }}
-
             breakpoints={{
               320: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              499: {
                 slidesPerView: 1.2,
                 spaceBetween: 10,
               },
@@ -128,9 +101,9 @@ export default function ResponsiveSlider() {
             loop
             slidesPerView={getSlidesPerView()}
             spaceBetween={isMobile ? 10 : 20}
-          // className="w-full  h-full flex items-center"
+            // className="w-full  h-full flex items-center"
           >
-            {/* {images.map((img, idx) => (
+            {images.map((img, idx) => (
               <SwiperSlide
                 key={idx}
                 className="flex justify-center items-center transition-all duration-500 py-4 sm:py-6"
@@ -160,7 +133,7 @@ export default function ResponsiveSlider() {
                   />
                 </motion.div>
               </SwiperSlide>
-            ))} */}
+            ))}
 
             {/* {images.map((img, idx) => (
               <SwiperSlide
@@ -168,31 +141,25 @@ export default function ResponsiveSlider() {
                 className="flex justify-center items-center transition-all duration-500 py-4 sm:py-6"
               >
                 <motion.div
-                  className={`relative ${isPortrait
-                    ? 'w-[85%] h-[350px]'
-                    : 'w-[95%] h-[240px]'
-                    } sm:w-[85%] md:w-[80%] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-3xl shadow-xl`}
+                  className="relative w-[90%] sm:w-[85%] md:w-[75%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-[2.5rem] shadow-xl"
                   animate={{
-                    scale: idx === activeIndex ? 1.05 : 0.95,
-                    opacity: idx === activeIndex ? 1 : 0.8,
+                    scale: idx === activeIndex ? 1.05 : 0.9,
+                    opacity: idx === activeIndex ? 1 : 0.6,
                     y: idx === activeIndex ? -10 : 0,
                   }}
                   transition={{
-                    duration: 0.4,
+                    duration: 0.5,
                     type: "spring",
-                    stiffness: 250,
-                    damping: 25,
+                    stiffness: 300,
+                    damping: 20,
                   }}
                 >
                   <Image
                     src={img.url}
                     alt={img.alt}
                     fill
-                    // className="object-contain rounded-[2rem]"
-                    sizes={`${isPortrait
-                      ? '(max-width: 640px) 85vw'
-                      : '(max-width: 640px) 95vw'
-                      }, (max-width: 768px) 85vw, 80vw`}
+                    className="object-contain rounded-[2.5rem]"
+                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, 75vw"
                     priority={idx === activeIndex}
                     quality={100}
                   />
@@ -200,41 +167,6 @@ export default function ResponsiveSlider() {
               </SwiperSlide>
             ))} */}
 
-            {images.map((img, idx) => (
-      <SwiperSlide
-        key={idx}
-        className="flex justify-center items-center transition-all duration-500 py-2 xs:py-4 sm:py-6"
-      >
-        <motion.div
-          className={`relative ${
-            isPortrait
-              ? 'w-[95%] xs:w-[90%] h-[280px] xs:h-[320px]'
-              : 'w-[95%] h-[240px]'
-          } sm:w-[85%] md:w-[80%] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-2xl shadow-xl`}
-          animate={{
-            scale: idx === activeIndex ? 1.02 : 0.98,
-            opacity: idx === activeIndex ? 1 : 0.85,
-            y: idx === activeIndex ? -5 : 0,
-          }}
-          transition={{
-            duration: 0.3,
-            type: "spring",
-            stiffness: 200,
-            damping: 20,
-          }}
-        >
-          <Image
-            src={img.url}
-            alt={img.alt}
-            fill
-            className="object-fill p-2 rounded-3xl"
-            sizes="(max-width: 498px) 95vw, (max-width: 640px) 90vw, (max-width: 768px) 85vw, 80vw"
-            priority={idx === activeIndex}
-            quality={90}
-          />
-        </motion.div>
-      </SwiperSlide>
-    ))}
             {/* Navigation Buttons */}
             <button
               onClick={handlePrevClick}
