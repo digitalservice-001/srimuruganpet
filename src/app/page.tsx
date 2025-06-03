@@ -127,9 +127,10 @@ export default function ResponsiveSlider() {
                     alt={img.alt}
                     fill
                     // className=" rounded-[3rem] shadow-xl transition-transform duration-300"
-                    // sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, 75vw"
+                    sizes="(max-width: 640px) 90vw, (max-width: 768px) 85vw, 75vw"
                     priority={idx === activeIndex}
                     quality={100}
+
                   />
                 </motion.div>
               </SwiperSlide>
