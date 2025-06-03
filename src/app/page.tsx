@@ -67,7 +67,7 @@ export default function ResponsiveSlider() {
     <div className="w-full bg-gradient-to-b from-slate-50 to-white mb-16">
       <div className="container mx-auto px-4 py-4 sm:py-8">
         {/* Slider Section */}
-        <div className="w-full h-[350px] rounded-[3rem] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] relative group overflow-hidden">
+        <div className="w-full h-[350px]  xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] relative group overflow-hidden">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper
@@ -101,15 +101,15 @@ export default function ResponsiveSlider() {
             loop
             slidesPerView={getSlidesPerView()}
             spaceBetween={isMobile ? 10 : 20}
-            className="w-full rounded-[3rem] h-full flex items-center"
+            className="w-full  h-full flex items-center"
           >
             {images.map((img, idx) => (
               <SwiperSlide
                 key={idx}
-                className="flex rounded-[3rem] justify-center items-center transition-all duration-500 py-4 sm:py-6"
+                className="flex justify-center items-center transition-all duration-500 py-4 sm:py-6"
               >
                 <motion.div
-                  className="relative w-[90%] sm:w-[85%] md:w-[75%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-2xl "
+                  className="relative w-[90%] sm:w-[85%] md:w-[75%] h-[280px] sm:h-[320px] md:h-[380px] mx-auto overflow-hidden rounded-2xl"
                   animate={{
                     scale: idx === activeIndex ? 1.05 : 0.9,
                     opacity: idx === activeIndex ? 1 : 0.6,
