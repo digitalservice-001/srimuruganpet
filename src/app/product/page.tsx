@@ -6,7 +6,7 @@ import { useState } from "react";
 const products = [
   { id: 2, name: "Product 2", price: "$10.00", image: "/img2.JPEG", category: "Category A" },
   { id: 3, name: "Product 3", price: "$12.00", image: "/img3.JPEG", category: "Category B" },
-  { id: 4, name: "Product 4", price: "$15.00", image: "/img4.JPEG", category: "Category C" },
+  // { id: 4, name: "Product 4", price: "$15.00", image: "/img4.JPEG", category: "Category C" },
   { id: 5, name: "Product 5", price: "$20.00", image: "/img5.JPEG", category: "Category A" },
   { id: 6, name: "Product 6", price: "$18.00", image: "/img6.JPEG", category: "Category B" },
   { id: 7, name: "Product 7", price: "$22.00", image: "/img7.JPEG", category: "Category C" },
@@ -14,7 +14,7 @@ const products = [
   { id: 9, name: "Product 9", price: "$30.00", image: "/img9.JPEG", category: "Category B" },
   { id: 10, name: "Product 10", price: "$35.00", image: "/img10.JPEG", category: "Category C" },
   { id: 11, name: "Product 11", price: "$40.00", image: "/img11.JPEG", category: "Category A" },
-  { id: 12, name: "Product 12", price: "$45.00", image: "/img12.JPEG", category: "Category B" },
+  // { id: 12, name: "Product 12", price: "$45.00", image: "/img12.JPEG", category: "Category B" },
   { id: 13, name: "Product 13", price: "$50.00", image: "/img13.JPEG", category: "Category C" },
   { id: 14, name: "Product 14", price: "$55.00", image: "/img14.JPEG", category: "Category A" },
   { id: 15, name: "Product 15", price: "$60.00", image: "/img15.JPEG", category: "Category B" },
@@ -23,7 +23,7 @@ const products = [
   { id: 18, name: "Product 18", price: "$75.00", image: "/img18.JPEG", category: "Category B" },
   { id: 19, name: "Product 19", price: "$80.00", image: "/img19.JPEG", category: "Category C" },
   { id: 20, name: "Product 20", price: "$85.00", image: "/img20.JPEG", category: "Category A" },
-  { id: 21, name: "Product 21", price: "$90.00", image: "/img21.JPEG", category: "Category B" },
+  // { id: 21, name: "Product 21", price: "$90.00", image: "/img21.JPEG", category: "Category B" },
 ];
 
 interface Product {
