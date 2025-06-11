@@ -68,7 +68,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium text-lg">Address</h3>
                       <p className="text-gray-600">
-                        12B vaiyampalayam road , Keeranatham
+                        12B vayampalayam road , Keeranatham
                         <br />
                         Coimbatore, Tamil Nadu
                         <br />

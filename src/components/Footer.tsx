@@ -165,7 +165,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 text-gray-300 shrink-0 mt-0.5" />
-                <span className="text-gray-300">12B vaiyampalayam road, Keeranatham,
+                <span className="text-gray-300">12B vayampalayam road, Keeranatham,
                   Coimbatore -Tamil Nadu, India - 641035</span>
               </li>
               <li className="flex items-center">
